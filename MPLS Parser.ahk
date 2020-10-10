@@ -1,4 +1,4 @@
-﻿; MPLS Parser Version 2 = 28 Jan 2020
+﻿; MPLS Parser Version 2 = 10 October 2020
 ; Author: jmone
 
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
@@ -73,8 +73,6 @@ Loop %NumberofPlaylistMarks% ; Gets the details for each chapter and calculates 
 
 	If MarkType != 2 ; ignore Link Points (which are #2) and write the contents to the file
 		{
-		If A_Index < 10
-			Chap_N = 0%A_Index%
 		FileAppend, CHAPTER%Chap_N%=%ChapterStartTime%`n, %InputMPLS%.chapters.txt 
 		FileAppend, CHAPTER%Chap_N%NAME=Chapter %Chap_N%`n, %InputMPLS%.chapters.txt
 		Chap_N := Chap_N + 1
